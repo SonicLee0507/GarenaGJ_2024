@@ -44,4 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f649fb5b4cbbac64b9ff52b846557780, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue: []
+  dialogue:
+  - "\u4F60\u5229\u7528\u4E86\u8070\u660E\u7684\u8166\u888B"
+  - "\u6210\u529F\u7684\u5C07\u535A\u58EB\u95DC\u5230\u4E86\u5BE6\u9A57\u5BA4\u88E1"
+  - "\u800C\u4F60\u5728\u5916\u9762\u555F\u52D5\u4E86\u958B\u95DC"
+  - "\u770B\u8457\u535A\u58EB\u56E0\u6838\u8F3B\u5C04\u6C59\u67D3\u800C\u6B7B"
