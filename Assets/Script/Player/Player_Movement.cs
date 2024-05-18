@@ -26,21 +26,19 @@ public class Player_Movement : MonoBehaviour
     void Update()
     {
         
+        if (Input.GetKeyDown(KeyCode.Space) & jumpnumb == 1)
+        {
+            rb.velocity = new Vector3(0, jumpforce, 0);
+            jumpnumb -= 1;
+        }
     }
     private void FixedUpdate()
     {
+
         // Storing Player's Input
         input = Input.GetAxis("Horizontal");
         //Moving Player
         rb.velocity = new Vector3(input * speed, rb.velocity.y);
-        if (input != 0)
-        {
-            anim.SetBool("IsRunning", true);
-        }
-        else
-        {
-            anim.SetBool("IsRunning", false);
-        }
         if (input > 0)
         {
             transform.eulerAngles = new Vector3(0, 0, 0);
@@ -48,12 +46,6 @@ public class Player_Movement : MonoBehaviour
         else if (input < 0)
         {
             transform.eulerAngles = new Vector3(0, 180, 0);
-        }
-
-        if (Input.GetKeyDown(KeyCode.Space) & jumpnumb >= 1)
-        {
-            rb.velocity = new Vector3(0, jumpforce, 0);
-            jumpnumb -= 1;
         }
     }
     private void OnTriggerEnter(Collider other)

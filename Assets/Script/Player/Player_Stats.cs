@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class Player_Stats : MonoBehaviour
 {
+    public LoadScene loadScene;
     public CameraControl cameraControl;
     public Player_Control player_Control;
-    public GameControl_SJ gameControl;
-    public void PlayerTakeDamage(float damageAmount)
+    public GameControl gameControl;
+    public void PlayerTakeDamage(float damageAmount , string cg)
     {
-        if (player_Control.isBlock)
+        if (player_Control.stage == 1)
         {
-            player_Control.HitEffect.SetActive(true);
-            Instantiate(player_Control.HitEffect, transform.position, Quaternion.AngleAxis(0, Vector3.forward));
+           loadScene.Load(cg);
         }
-        else { player_Control.player_hp -= damageAmount; }
+        
 
         cameraControl.PlayerShakeAnimation();
-        gameControl.SlowTime(damageAmount*0.05f);
+
     }
 }
