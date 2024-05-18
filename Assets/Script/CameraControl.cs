@@ -9,7 +9,7 @@ public class CameraControl : MonoBehaviour
     public CameraControl Instance => instance;
 
     [SerializeField]private bool isShake = false;
-
+    public Transform player;
     // Start is called before the first frame update
     void Awake()
     {
@@ -17,6 +17,8 @@ public class CameraControl : MonoBehaviour
     }
     private void Update()
     {
+        transform.position = new Vector3(player.position.x,-0.4f,-10);
+
         if (isShake)
         {       
             PlayerShakeAnimation();

@@ -19,16 +19,16 @@ public class Player_Control : MonoBehaviour
     public GameObject Player;
 
 
-    public GameObject HitEffect;
+    //public GameObject HitEffect;
     void Start()
     {
-        player_healthBar.maxValue = player_maxhp;
+        //player_healthBar.maxValue = player_maxhp;
     }
 
     // Update is called once per frame
     void Update()
     {
-        player_healthBar.value = player_hp;
+        //player_healthBar.value = player_hp;
 
         PlayerSkillSet();
 
