@@ -27,6 +27,7 @@ public class Boss_Movement : MonoBehaviour
         if (canMove)
         {
           Movement();
+            bossController.boss_anim.Play("Moving");
         }
         if (atkMove)
         {
@@ -62,5 +63,9 @@ public class Boss_Movement : MonoBehaviour
     public void Atk_Movement()
     {
         transform.position = atkPoint[Random.Range(0, atkPoint.Length)].position;
+    }
+    public void Process_Movement()
+    {
+        bossController.boss_anim.Play("Processing");
     }
 }
