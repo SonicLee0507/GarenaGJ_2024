@@ -39,7 +39,7 @@ public class Boss_Movement : MonoBehaviour
         if (canMove )
         {
           Movement();
-          bossController.boss_anim.Play("Moving");
+          //bossController.boss_anim.Play("Moving");
         }
         if (moveToProcess)
         {
@@ -66,6 +66,7 @@ public class Boss_Movement : MonoBehaviour
                     Process_Movement(currentMovePointIndex, 1);
                     if (!processing)
                     {
+                        bossController.boss_anim.Play("Moving");
                         currentMovePointIndex += direction;
                         if (currentMovePointIndex >= movepoints.Length)
                         {
@@ -118,85 +119,46 @@ public class Boss_Movement : MonoBehaviour
         bossController.boss_ui.SetActive(true);
         if (process_point == 1)
         {
-            Debug.Log("Processing");
-            bossController.boss_ProcessTime -= Time.deltaTime*process_time;
-
-            if (bossController.boss_ProcessTime <=0)
-            {
-                Debug.Log("EndProcessing");
-                processing = false;
-                bossController.boss_ProcessTime = 1;
-                bossController.boss_ui.SetActive(false);
-            }
-            
+            Processing(process_time);
         }
         else if (process_point == 2)
         {
-            bossController.boss_ProcessTime -= Time.deltaTime * process_time;
+            //bossController.boss_ProcessTime -= Time.deltaTime * process_time;
 
-            if (bossController.boss_ProcessTime <= 0)
-            {
-                Debug.Log("EndProcessing");
-                processing = false;
-                bossController.boss_ProcessTime = 1;
-                bossController.boss_ui.SetActive(false);
-            }
+            //if (bossController.boss_ProcessTime <= 0)
+            //{
+            //    Debug.Log("EndProcessing");
+            //    processing = false;
+            //    bossController.boss_ProcessTime = 1;
+            //    bossController.boss_ui.SetActive(false);
+            //}
+            Processing(process_time);
         }
         else if (process_point == 3)
         {
-            bossController.boss_ProcessTime -= Time.deltaTime * process_time;
-
-            if (bossController.boss_ProcessTime <= 0)
-            {
-                Debug.Log("EndProcessing");
-                processing = false;
-                bossController.boss_ProcessTime = 1;
-                bossController.boss_ui.SetActive(false);
-            }
+            Processing(process_time);
         }
         else if (process_point == 4)
         {
-            bossController.boss_ProcessTime -= Time.deltaTime * process_time;
-
-            if (bossController.boss_ProcessTime <= 0)
-            {
-                Debug.Log("EndProcessing");
-                processing = false;
-                bossController.boss_ProcessTime = 1;
-                bossController.boss_ui.SetActive(false);
-            }
+            Processing(process_time);
         }
         else if (process_point == 5)
         {
-            bossController.boss_ProcessTime -= Time.deltaTime * process_time;
-
-            if (bossController.boss_ProcessTime <= 0)
-            {
-                Debug.Log("EndProcessing");
-                processing = false;
-                bossController.boss_ProcessTime = 1;
-                bossController.boss_ui.SetActive(false);
-            }
+            Processing(process_time);
         }
         else if (process_point == 6)
         {
-            bossController.boss_ProcessTime -= Time.deltaTime * process_time;
-
-            if (bossController.boss_ProcessTime <= 0)
-            {
-                Debug.Log("EndProcessing");
-                processing = false;
-                bossController.boss_ProcessTime = 1;
-                bossController.boss_ui.SetActive(false);
-            }
+            Processing(process_time);
         }
-        bossController.boss_anim.Play("Processing");
+        else if (process_point == 0)
+        {
+            Processing(process_time);
+        }
+
     }
     public void Process_PonitToMove(int process_point)
     {
         process_id = process_point;
-        bossController.boss_anim.Play("Processing");
-
         moveToProcess = true;
 
     }
@@ -211,5 +173,21 @@ public class Boss_Movement : MonoBehaviour
         }
 
         bossController.boss_anim.Play("Processing");
+    }
+    private void Processing(float process_time)
+    {
+        {
+            bossController.boss_anim.Play("Processing");
+            bossController.boss_ProcessTime -= Time.deltaTime * process_time;
+            bossController.boss.sprite = bossController.boss_sprite[1];
+            if (bossController.boss_ProcessTime <= 0)
+            {
+                Debug.Log("EndProcessing");
+                processing = false;
+                bossController.boss_ProcessTime = 1;
+                bossController.boss.sprite = bossController.boss_sprite[0];
+                bossController.boss_ui.SetActive(false);
+            }
+        }
     }
 }

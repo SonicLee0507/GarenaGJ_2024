@@ -13,6 +13,9 @@ public class BossController : MonoBehaviour
     [SerializeField] public Slider boss_TimeBar;
     [SerializeField] public float boss_ProcessTime;
     [SerializeField] public int boss_MaxProcessTime;
+
+    public SpriteRenderer boss;
+    public Sprite[] boss_sprite;
     // Start is called before the first frame update
     void Start()
     {
