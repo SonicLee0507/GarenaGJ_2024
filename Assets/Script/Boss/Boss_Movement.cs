@@ -13,13 +13,18 @@ public class Boss_Movement : MonoBehaviour
     [SerializeField]private int currentMovePointIndex = 0;
     private int direction = 1; // 1 for forward, -1 for backward
 
+    private int process_point;
+
     public bool canMove = true;
     public bool detecting ;
 
     public bool atkMove = true;
 
     public bool processing;
+    public bool moveToProcess;
     public Transform[] atkPoint;
+
+    public int process_id;
     void Start()
     {
         if (movepoints.Length > 1)
@@ -31,14 +36,14 @@ public class Boss_Movement : MonoBehaviour
 
     void Update()
     {
-        if (canMove)
+        if (canMove )
         {
           Movement();
           bossController.boss_anim.Play("Moving");
         }
-        if (processing)
+        if (moveToProcess)
         {
-
+            Process_MoveToPoint();
         }
         if (atkMove)
         {
@@ -57,18 +62,23 @@ public class Boss_Movement : MonoBehaviour
 
                 if (transform.position == movepoints[currentMovePointIndex].position)
                 {
-                    currentMovePointIndex += direction;
 
-                    if (currentMovePointIndex >= movepoints.Length)
+                    Process_Movement(currentMovePointIndex, 1);
+                    if (!processing)
                     {
-                        currentMovePointIndex = movepoints.Length - 2;
-                        direction = -1;
+                        currentMovePointIndex += direction;
+                        if (currentMovePointIndex >= movepoints.Length)
+                        {
+                            currentMovePointIndex = movepoints.Length - 2;
+                            direction = -1;
+                        }
+                        else if (currentMovePointIndex < 0)
+                        {
+                            currentMovePointIndex = 1;
+                            direction = 1;
+                        }
                     }
-                    else if (currentMovePointIndex < 0)
-                    {
-                        currentMovePointIndex = 1;
-                        direction = 1;
-                    }
+
                 }
             }
             else
@@ -101,39 +111,105 @@ public class Boss_Movement : MonoBehaviour
     }
     public void Process_Movement(int process_point, float process_time)
     {
+
+        Debug.Log("Processing" + process_point);
+        processing = true;
+        //bossController.boss_ProcessTime = 1;  
+        bossController.boss_ui.SetActive(true);
         if (process_point == 1)
         {
-            bossController.boss_ProcessTime -= Time.deltaTime; 
+            Debug.Log("Processing");
+            bossController.boss_ProcessTime -= Time.deltaTime*process_time;
+
+            if (bossController.boss_ProcessTime <=0)
+            {
+                Debug.Log("EndProcessing");
+                processing = false;
+                bossController.boss_ProcessTime = 1;
+                bossController.boss_ui.SetActive(false);
+            }
+            
         }
         else if (process_point == 2)
         {
+            bossController.boss_ProcessTime -= Time.deltaTime * process_time;
 
+            if (bossController.boss_ProcessTime <= 0)
+            {
+                Debug.Log("EndProcessing");
+                processing = false;
+                bossController.boss_ProcessTime = 1;
+                bossController.boss_ui.SetActive(false);
+            }
         }
         else if (process_point == 3)
         {
+            bossController.boss_ProcessTime -= Time.deltaTime * process_time;
 
+            if (bossController.boss_ProcessTime <= 0)
+            {
+                Debug.Log("EndProcessing");
+                processing = false;
+                bossController.boss_ProcessTime = 1;
+                bossController.boss_ui.SetActive(false);
+            }
         }
         else if (process_point == 4)
         {
+            bossController.boss_ProcessTime -= Time.deltaTime * process_time;
 
+            if (bossController.boss_ProcessTime <= 0)
+            {
+                Debug.Log("EndProcessing");
+                processing = false;
+                bossController.boss_ProcessTime = 1;
+                bossController.boss_ui.SetActive(false);
+            }
         }
         else if (process_point == 5)
         {
+            bossController.boss_ProcessTime -= Time.deltaTime * process_time;
 
+            if (bossController.boss_ProcessTime <= 0)
+            {
+                Debug.Log("EndProcessing");
+                processing = false;
+                bossController.boss_ProcessTime = 1;
+                bossController.boss_ui.SetActive(false);
+            }
         }
         else if (process_point == 6)
         {
+            bossController.boss_ProcessTime -= Time.deltaTime * process_time;
 
+            if (bossController.boss_ProcessTime <= 0)
+            {
+                Debug.Log("EndProcessing");
+                processing = false;
+                bossController.boss_ProcessTime = 1;
+                bossController.boss_ui.SetActive(false);
+            }
         }
         bossController.boss_anim.Play("Processing");
     }
-    public void Process_MoveToPoint(int process_point)
+    public void Process_PonitToMove(int process_point)
     {
-        if ()
-        {
+        process_id = process_point;
+        bossController.boss_anim.Play("Processing");
 
+        moveToProcess = true;
+
+    }
+    public void Process_MoveToPoint()
+    {
+        float step = movespeed * Time.deltaTime;
+        transform.position = Vector3.MoveTowards(transform.position, trick_movepoints[process_id].position, step);
+        if (transform.position == trick_movepoints[process_id].position)
+        {
+            moveToProcess = false;
+            processing = true;
         }
+
         bossController.boss_anim.Play("Processing");
     }
-
 }

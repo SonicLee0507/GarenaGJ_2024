@@ -457,6 +457,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b1370ada5335694ea2dab5367d004ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  obj_id: 0
+  processtime: 0
+  isInteractable: 0
+  beforeInteract: {fileID: 0}
+  afterInteract: {fileID: 0}
 --- !u!1 &186465735
 GameObject:
   m_ObjectHideFlags: 0
@@ -2439,6 +2444,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b1370ada5335694ea2dab5367d004ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  obj_id: 0
+  processtime: 0
+  isInteractable: 0
+  beforeInteract: {fileID: 0}
+  afterInteract: {fileID: 0}
 --- !u!1 &672394405
 GameObject:
   m_ObjectHideFlags: 0
@@ -2803,9 +2813,10 @@ MonoBehaviour:
   stage: 0
   movespeed: 0
   boss_anim: {fileID: 822386067}
+  boss_ui: {fileID: 491426321}
   boss_TimeBar: {fileID: 2090822638}
-  boss_ProcessTime: 0
-  boss_MaxProcessTime: 10
+  boss_ProcessTime: 10
+  boss_MaxProcessTime: 1
 --- !u!95 &822386067
 Animator:
   serializedVersion: 4
@@ -3001,12 +3012,15 @@ MonoBehaviour:
   - {fileID: 672394406}
   - {fileID: 1104101413}
   trick_movepoints: []
+  currentMovePointIndex: 0
   canMove: 1
   detecting: 0
   atkMove: 0
   processing: 0
+  moveToProcess: 0
   atkPoint:
   - {fileID: 1881756408}
+  process_id: 0
 --- !u!114 &892133178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4712,6 +4726,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b1370ada5335694ea2dab5367d004ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  obj_id: 0
+  processtime: 0
+  isInteractable: 0
+  beforeInteract: {fileID: 0}
+  afterInteract: {fileID: 0}
 --- !u!1 &1310327712
 GameObject:
   m_ObjectHideFlags: 0
@@ -5992,6 +6011,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b1370ada5335694ea2dab5367d004ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  obj_id: 0
+  processtime: 0
+  isInteractable: 0
+  beforeInteract: {fileID: 0}
+  afterInteract: {fileID: 0}
 --- !u!1 &1699137860
 GameObject:
   m_ObjectHideFlags: 0
@@ -6180,6 +6204,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b1370ada5335694ea2dab5367d004ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  obj_id: 0
+  processtime: 0
+  isInteractable: 0
+  beforeInteract: {fileID: 0}
+  afterInteract: {fileID: 0}
 --- !u!1 &1741921624
 GameObject:
   m_ObjectHideFlags: 0
@@ -7553,6 +7582,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b1370ada5335694ea2dab5367d004ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  obj_id: 0
+  processtime: 0
+  isInteractable: 0
+  beforeInteract: {fileID: 0}
+  afterInteract: {fileID: 0}
 --- !u!1 &2080968201
 GameObject:
   m_ObjectHideFlags: 0
@@ -7677,7 +7711,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []

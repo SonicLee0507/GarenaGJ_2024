@@ -9,13 +9,14 @@ public class BossController : MonoBehaviour
     public float movespeed;
     //[SerializeField] public Animator anim;
     [SerializeField] public Animator boss_anim;
-
+    [SerializeField] public GameObject boss_ui;
     [SerializeField] public Slider boss_TimeBar;
     [SerializeField] public float boss_ProcessTime;
     [SerializeField] public int boss_MaxProcessTime;
     // Start is called before the first frame update
     void Start()
     {
+        boss_ProcessTime = boss_MaxProcessTime;
     }
 
     // Update is called once per frame
