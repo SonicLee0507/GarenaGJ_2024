@@ -7,11 +7,18 @@ public class Boss_Movement : MonoBehaviour
     public BossController bossController;
     public float movespeed;
     public Transform[] movepoints;
+    public Transform[] detect_movepoints;
+    public Transform[] trick_movepoints;
+
     private int currentMovePointIndex = 0;
     private int direction = 1; // 1 for forward, -1 for backward
 
     public bool canMove = true;
+    public bool detecting ;
+
     public bool atkMove = true;
+
+    public bool processing;
     public Transform[] atkPoint;
     void Start()
     {
@@ -27,7 +34,7 @@ public class Boss_Movement : MonoBehaviour
         if (canMove)
         {
           Movement();
-            bossController.boss_anim.Play("Moving");
+          bossController.boss_anim.Play("Moving");
         }
         if (atkMove)
         {
@@ -37,7 +44,7 @@ public class Boss_Movement : MonoBehaviour
 
     public void Movement()
     {
-        if (currentMovePointIndex >= 0 && currentMovePointIndex < movepoints.Length)
+        if (currentMovePointIndex >= 0 && currentMovePointIndex < movepoints.Length & !detecting)
         {
             float step = movespeed * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position, movepoints[currentMovePointIndex].position, step);
@@ -57,6 +64,9 @@ public class Boss_Movement : MonoBehaviour
                     direction = 1;
                 }
             }
+
+
+
         }
     }
 
