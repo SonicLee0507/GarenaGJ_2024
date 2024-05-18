@@ -16,7 +16,6 @@ public class BossController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        boss_TimeBar.maxValue = boss_ProcessTime;
     }
 
     // Update is called once per frame

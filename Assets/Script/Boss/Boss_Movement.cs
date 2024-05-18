@@ -10,7 +10,7 @@ public class Boss_Movement : MonoBehaviour
     public Transform[] detect_movepoints;
     public Transform[] trick_movepoints;
 
-    private int currentMovePointIndex = 0;
+    [SerializeField]private int currentMovePointIndex = 0;
     private int direction = 1; // 1 for forward, -1 for backward
 
     public bool canMove = true;
@@ -36,6 +36,10 @@ public class Boss_Movement : MonoBehaviour
           Movement();
           bossController.boss_anim.Play("Moving");
         }
+        if (processing)
+        {
+
+        }
         if (atkMove)
         {
             Atk_Movement();
@@ -44,29 +48,50 @@ public class Boss_Movement : MonoBehaviour
 
     public void Movement()
     {
-        if (currentMovePointIndex >= 0 && currentMovePointIndex < movepoints.Length & !detecting)
+        if (currentMovePointIndex >= 0 && currentMovePointIndex < movepoints.Length)
         {
-            float step = movespeed * Time.deltaTime;
-            transform.position = Vector3.MoveTowards(transform.position, movepoints[currentMovePointIndex].position, step);
-
-            if (transform.position == movepoints[currentMovePointIndex].position)
+            if (!detecting)
             {
-                currentMovePointIndex += direction;
+                float step = movespeed * Time.deltaTime;
+                transform.position = Vector3.MoveTowards(transform.position,movepoints[currentMovePointIndex].position, step);
 
-                if (currentMovePointIndex >= movepoints.Length)
+                if (transform.position == movepoints[currentMovePointIndex].position)
                 {
-                    currentMovePointIndex = movepoints.Length - 2;
-                    direction = -1;
-                }
-                else if (currentMovePointIndex < 0)
-                {
-                    currentMovePointIndex = 1;
-                    direction = 1;
+                    currentMovePointIndex += direction;
+
+                    if (currentMovePointIndex >= movepoints.Length)
+                    {
+                        currentMovePointIndex = movepoints.Length - 2;
+                        direction = -1;
+                    }
+                    else if (currentMovePointIndex < 0)
+                    {
+                        currentMovePointIndex = 1;
+                        direction = 1;
+                    }
                 }
             }
+            else
+            {
+                float step = movespeed * Time.deltaTime;
+                transform.position = Vector3.MoveTowards(transform.position, detect_movepoints[currentMovePointIndex].position, step);
 
+                if (transform.position == detect_movepoints[currentMovePointIndex].position)
+                {
+                    currentMovePointIndex += direction;
 
-
+                    if (currentMovePointIndex >= detect_movepoints.Length)
+                    {
+                        currentMovePointIndex = detect_movepoints.Length - 2;
+                        direction = -1;
+                    }
+                    else if (currentMovePointIndex < 0)
+                    {
+                        currentMovePointIndex = 1;
+                        direction = 1;
+                    }
+                }
+            }
         }
     }
 
@@ -74,8 +99,41 @@ public class Boss_Movement : MonoBehaviour
     {
         transform.position = atkPoint[Random.Range(0, atkPoint.Length)].position;
     }
-    public void Process_Movement()
+    public void Process_Movement(int process_point, float process_time)
     {
+        if (process_point == 1)
+        {
+            bossController.boss_ProcessTime -= Time.deltaTime; 
+        }
+        else if (process_point == 2)
+        {
+
+        }
+        else if (process_point == 3)
+        {
+
+        }
+        else if (process_point == 4)
+        {
+
+        }
+        else if (process_point == 5)
+        {
+
+        }
+        else if (process_point == 6)
+        {
+
+        }
         bossController.boss_anim.Play("Processing");
     }
+    public void Process_MoveToPoint(int process_point)
+    {
+        if ()
+        {
+
+        }
+        bossController.boss_anim.Play("Processing");
+    }
+
 }
