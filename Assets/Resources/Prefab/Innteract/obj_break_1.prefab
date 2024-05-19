@@ -104,8 +104,9 @@ MonoBehaviour:
   processtime: 1
   isInteractable: 1
   isTrick: 0
+  Obj: {fileID: 3288209536802634432}
   beforeInteract: {fileID: 0}
-  afterInteract: {fileID: 0}
+  afterInteract: {fileID: 21300000, guid: 878e1d5784f603b4a9f186ff9dfaaacb, type: 3}
 --- !u!54 &3288209536802634461
 Rigidbody:
   m_ObjectHideFlags: 0

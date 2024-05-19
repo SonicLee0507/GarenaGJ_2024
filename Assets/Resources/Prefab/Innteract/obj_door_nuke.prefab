@@ -105,6 +105,7 @@ MonoBehaviour:
   processtime: 0
   isInteractable: 1
   isTrick: 0
+  Obj: {fileID: 4906351380491752026}
   beforeInteract: {fileID: 0}
   afterInteract: {fileID: 0}
 --- !u!54 &-8773671514121127254

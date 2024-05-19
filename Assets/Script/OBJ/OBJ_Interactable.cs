@@ -10,6 +10,7 @@ public class OBJ_Interactable : MonoBehaviour
     public bool isInteractable;
     public bool isTrick;
 
+    public SpriteRenderer Obj;
     public Sprite beforeInteract;
     public Sprite afterInteract;
     private void OnTriggerEnter(Collider other)
@@ -18,13 +19,15 @@ public class OBJ_Interactable : MonoBehaviour
         if (other.name == "Boss" & !isInteractable)
         {
             Debug.Log("Boss Event" + obj_id);
-            other.GetComponent<Boss_Movement>().Process_Movement(obj_id, processtime);
+            other.GetComponent<Boss_Movement>().Process_PonitToMove(obj_id);
         }
 
         if (other.tag == "Player" & isInteractable)
         {
             Debug.Log("Player Event" + obj_id);
             other.GetComponent<Player_Interact>().PlayerInteract(obj_id);
+            isInteractable = false;
+            Obj.sprite = afterInteract;
         }
 
         //if (other.name == "Girl" + obj_id & isInteractable)

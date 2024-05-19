@@ -33,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5953528153523118273
 SpriteRenderer:
@@ -104,8 +104,9 @@ MonoBehaviour:
   processtime: 1
   isInteractable: 1
   isTrick: 0
+  Obj: {fileID: 5953528153523118273}
   beforeInteract: {fileID: 0}
-  afterInteract: {fileID: 0}
+  afterInteract: {fileID: 21300000, guid: 7b8dda1450e24094a93d36f893391aa1, type: 3}
 --- !u!54 &5953528153523118274
 Rigidbody:
   m_ObjectHideFlags: 0
