@@ -117,62 +117,56 @@ public class Boss_Movement : MonoBehaviour
         processing = true;
         //bossController.boss_ProcessTime = 1;  
         bossController.boss_ui.SetActive(true);
-        if (process_point == 1)
-        {
-            Processing(process_time);
-        }
-        else if (process_point == 2)
-        {
-            //bossController.boss_ProcessTime -= Time.deltaTime * process_time;
-
-            //if (bossController.boss_ProcessTime <= 0)
-            //{
-            //    Debug.Log("EndProcessing");
-            //    processing = false;
-            //    bossController.boss_ProcessTime = 1;
-            //    bossController.boss_ui.SetActive(false);
-            //}
-            Processing(process_time);
-        }
-        else if (process_point == 3)
-        {
-            Processing(process_time);
-        }
-        else if (process_point == 4)
-        {
-            Processing(process_time);
-        }
-        else if (process_point == 5)
-        {
-            Processing(process_time);
-        }
-        else if (process_point == 6)
-        {
-            Processing(process_time);
-        }
-        else if (process_point == 0)
-        {
-            Processing(process_time);
-        }
+        Processing(process_time);
+        //if (process_point == 1)
+        //{
+        //    Processing(process_time);
+        //}
+        //else if (process_point == 2)
+        //{
+        //    Processing(process_time);
+        //}
+        //else if (process_point == 3)
+        //{
+        //    Processing(process_time);
+        //}
+        //else if (process_point == 4)
+        //{
+        //    Processing(process_time);
+        //}
+        //else if (process_point == 5)
+        //{
+        //    Processing(process_time);
+        //}
+        //else if (process_point == 6)
+        //{
+        //    Processing(process_time);
+        //}
+        //else if (process_point == 0)
+        //{
+        //    Processing(process_time);
+        //}
 
     }
     public void Process_PonitToMove(int process_point)
     {
-        process_id = process_point;
+        process_id = process_point-1;
         moveToProcess = true;
 
     }
     public void Process_MoveToPoint()
     {
+        canMove = false;
         float step = movespeed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, trick_movepoints[process_id].position, step);
+        bossController.boss_anim.Play("Moving");
         if (transform.position == trick_movepoints[process_id].position)
         {
-            moveToProcess = false;
             processing = true;
+            Process_Movement(process_id, 1);
+            bossController.boss_anim.Play("Processing");
         }
 
-        bossController.boss_anim.Play("Processing");
     }
     private void Processing(float process_time)
     {
@@ -187,7 +181,10 @@ public class Boss_Movement : MonoBehaviour
                 bossController.boss_ProcessTime = 1;
                 bossController.boss.sprite = bossController.boss_sprite[0];
                 bossController.boss_ui.SetActive(false);
+                canMove = true;
+                moveToProcess = false;
             }
+
         }
     }
 }

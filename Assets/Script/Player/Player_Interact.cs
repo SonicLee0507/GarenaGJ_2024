@@ -13,23 +13,24 @@ public class Player_Interact : MonoBehaviour
 
     public void PlayerInteract(int objID)
     {
-        if (objID == 1)
-        { 
-
-        }
-        else if(objID == 2)
-        {
-
-        }
+        Debug.Log("Player Interacting" + objID);
+            interact_ID = objID;
+            Colletion[objID-1] = true;
     }
     private void OnTriggerStay(Collider other)
     {
         if (other.tag == "Interactable")
         {
+            Debug.Log("Player Interacting! Press F?");
             if (Input.GetKeyDown(KeyCode.F))
             {
+                Debug.Log("Player Interact!");
                 interact_ID = other.GetComponent<OBJ_Interactable>().obj_id;
-                boss_Movement.Process_PonitToMove(interact_ID);
+                if (other.GetComponent<OBJ_Interactable>().isTrick)
+                {
+                 boss_Movement.Process_PonitToMove(other.GetComponent<OBJ_Interactable>().obj_point);
+                }
+
             }
         }
     }

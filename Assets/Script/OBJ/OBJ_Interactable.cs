@@ -5,8 +5,10 @@ using UnityEngine;
 public class OBJ_Interactable : MonoBehaviour
 {
     public int obj_id;
+    public int obj_point;
     public float processtime;
     public bool isInteractable;
+    public bool isTrick;
 
     public Sprite beforeInteract;
     public Sprite afterInteract;

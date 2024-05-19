@@ -123,6 +123,65 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &368851204
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 2
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3563473433809340338, guid: ddcae2fb802df7945a3db25dcd40683e, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3563473433809340338, guid: ddcae2fb802df7945a3db25dcd40683e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.7380013
+      objectReference: {fileID: 0}
+    - target: {fileID: 3563473433809340338, guid: ddcae2fb802df7945a3db25dcd40683e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.050182037
+      objectReference: {fileID: 0}
+    - target: {fileID: 3563473433809340338, guid: ddcae2fb802df7945a3db25dcd40683e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0026269965
+      objectReference: {fileID: 0}
+    - target: {fileID: 3563473433809340338, guid: ddcae2fb802df7945a3db25dcd40683e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3563473433809340338, guid: ddcae2fb802df7945a3db25dcd40683e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3563473433809340338, guid: ddcae2fb802df7945a3db25dcd40683e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3563473433809340338, guid: ddcae2fb802df7945a3db25dcd40683e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3563473433809340338, guid: ddcae2fb802df7945a3db25dcd40683e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3563473433809340338, guid: ddcae2fb802df7945a3db25dcd40683e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3563473433809340338, guid: ddcae2fb802df7945a3db25dcd40683e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7080276470229234712, guid: ddcae2fb802df7945a3db25dcd40683e, type: 3}
+      propertyPath: m_Name
+      value: End_7
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_AddedGameObjects: []
+  m_SourcePrefab: {fileID: 100100000, guid: ddcae2fb802df7945a3db25dcd40683e, type: 3}
 --- !u!1 &466294939
 GameObject:
   m_ObjectHideFlags: 0
@@ -299,102 +358,3 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
---- !u!1001 &1604218564
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 2
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 835397240606901517, guid: df00ad816b578b547ba5cc4fc7d90538, type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 835397240606901517, guid: df00ad816b578b547ba5cc4fc7d90538, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2.7380013
-      objectReference: {fileID: 0}
-    - target: {fileID: 835397240606901517, guid: df00ad816b578b547ba5cc4fc7d90538, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 835397240606901517, guid: df00ad816b578b547ba5cc4fc7d90538, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 835397240606901517, guid: df00ad816b578b547ba5cc4fc7d90538, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 835397240606901517, guid: df00ad816b578b547ba5cc4fc7d90538, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 835397240606901517, guid: df00ad816b578b547ba5cc4fc7d90538, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 835397240606901517, guid: df00ad816b578b547ba5cc4fc7d90538, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 835397240606901517, guid: df00ad816b578b547ba5cc4fc7d90538, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 835397240606901517, guid: df00ad816b578b547ba5cc4fc7d90538, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 835397240606901517, guid: df00ad816b578b547ba5cc4fc7d90538, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1859621798457898946, guid: df00ad816b578b547ba5cc4fc7d90538, type: 3}
-      propertyPath: CgImages.Array.data[1]
-      value: 
-      objectReference: {fileID: -4794317617087937064, guid: 899cc3f4e3b15dd4c99729c64e360af3, type: 3}
-    - target: {fileID: 1859621798457898946, guid: df00ad816b578b547ba5cc4fc7d90538, type: 3}
-      propertyPath: CgImages.Array.data[2]
-      value: 
-      objectReference: {fileID: -1304786564905404012, guid: 899cc3f4e3b15dd4c99729c64e360af3, type: 3}
-    - target: {fileID: 1859621798457898946, guid: df00ad816b578b547ba5cc4fc7d90538, type: 3}
-      propertyPath: dialogue.Array.data[0]
-      value: "With full of confidence\u4F60\u5E36\u8457\u6EFF\u6EFF\u7684\u81EA\u4FE1"
-      objectReference: {fileID: 0}
-    - target: {fileID: 1859621798457898946, guid: df00ad816b578b547ba5cc4fc7d90538, type: 3}
-      propertyPath: dialogue.Array.data[1]
-      value: "You approaching to the Doctor\u671D\u8457\u535A\u58EB\u9760\u8FD1"
-      objectReference: {fileID: 0}
-    - target: {fileID: 1859621798457898946, guid: df00ad816b578b547ba5cc4fc7d90538, type: 3}
-      propertyPath: dialogue.Array.data[2]
-      value: "The doctor looks at you with horror on his face\u535A\u58EB\u4E00\u81C9\u9A5A\u6050\u5730\u770B\u8457\u4F60"
-      objectReference: {fileID: 0}
-    - target: {fileID: 1859621798457898946, guid: df00ad816b578b547ba5cc4fc7d90538, type: 3}
-      propertyPath: dialogue.Array.data[3]
-      value: "He could only let out a shrill scream in the end\u4ED6\u6700\u5F8C\u53EA\u80FD\u767C\u51FA\u4E00\u8072\u6DD2\u53B2\u7684\u5C16\u53EB"
-      objectReference: {fileID: 0}
-    - target: {fileID: 5164136304047913359, guid: df00ad816b578b547ba5cc4fc7d90538, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -8096974561673641646, guid: 899cc3f4e3b15dd4c99729c64e360af3, type: 3}
-    - target: {fileID: 5164136304047913359, guid: df00ad816b578b547ba5cc4fc7d90538, type: 3}
-      propertyPath: m_UseSpriteMesh
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5164136304047913359, guid: df00ad816b578b547ba5cc4fc7d90538, type: 3}
-      propertyPath: m_PreserveAspect
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5164136305134667419, guid: df00ad816b578b547ba5cc4fc7d90538, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 7190210786012174654, guid: df00ad816b578b547ba5cc4fc7d90538, type: 3}
-      propertyPath: m_Name
-      value: End_4
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_AddedGameObjects: []
-  m_SourcePrefab: {fileID: 100100000, guid: df00ad816b578b547ba5cc4fc7d90538, type: 3}
