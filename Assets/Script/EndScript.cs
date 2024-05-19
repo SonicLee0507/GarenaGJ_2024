@@ -24,17 +24,26 @@ public class EndScript : MonoBehaviour
     {
         if (Input.anyKeyDown )
         {
-            currentdia += 1;
-            dia.text = dialogue[currentdia];
+
+
             if (currentdia >= changeImageNum)
             {
                 currentImage += 1;
+                if (currentImage >= CgImages.Length)
+                {
+                    currentImage = CgImages.Length-1;
+                }
                 CG.sprite = CgImages[currentImage];
             }
-            if (currentdia == maxdia)
+            if (currentdia < maxdia)
             {
-                load.Load("Start");
+            currentdia += 1;
             }
+            else if (currentdia >= maxdia)
+            {
+                load.Load("Code_Test");
+            }  
+            dia.text = dialogue[currentdia];
         }
     }
 }

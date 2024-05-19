@@ -38,4 +38,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/End_10.unity
     guid: 65193654dd9b77c408c51e020afb08ec
+  - enabled: 1
+    path: Assets/Scenes/Fire.unity
+    guid: 9c9b4d69ab9aa05499fade8655ece5ca
+  - enabled: 1
+    path: Assets/Scenes/Code_Test.unity
+    guid: d84930b03e96e2842afd280ce9f531dd
   m_configObjects: {}
