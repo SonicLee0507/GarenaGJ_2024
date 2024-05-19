@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player_Movement : MonoBehaviour
 {
+    public Player_Control player_Control;
     public bool isGrounded;
     public Transform groundCheck;
     public float checkRadius;
@@ -12,9 +13,12 @@ public class Player_Movement : MonoBehaviour
     [SerializeField]private float speed;
     [SerializeField] private float jumpforce;
     [SerializeField] public int jumpnumb = 1;
-    private float input;
+    [SerializeField]private float input;
     public Rigidbody rb;
     public Animator anim;
+
+    public bool atking;
+
 
     // Start is called before the first frame update
     void Start()
@@ -25,14 +29,18 @@ public class Player_Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
         if (Input.GetKeyDown(KeyCode.Space) & jumpnumb == 1)
         {
             rb.velocity = new Vector3(0, jumpforce, 0);
             jumpnumb -= 1;
         }
+        if (jumpnumb == 0)
+        {
+            anim.Play("idle");
+        }
     }
-    private void FixedUpdate()
+        private void FixedUpdate()
     {
 
         // Storing Player's Input
@@ -42,11 +50,14 @@ public class Player_Movement : MonoBehaviour
         if (input > 0)
         {
             transform.eulerAngles = new Vector3(0, 0, 0);
+            anim.Play("move");
         }
         else if (input < 0)
         {
             transform.eulerAngles = new Vector3(0, 180, 0);
+            anim.Play("move");
         }
+        else if(input == 0 & !atking) { anim.Play("idle"); }
     }
     private void OnTriggerEnter(Collider other)
     {

@@ -311,6 +311,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: End_5
       objectReference: {fileID: 0}
+    - target: {fileID: 6424612068570136122, guid: c2ea37a4c73364646b77e65d73be198f, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6424612069908897147, guid: c2ea37a4c73364646b77e65d73be198f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8ca2759194e1e984ca95c90e7f31375a, type: 3}
     - target: {fileID: 8430722982976884234, guid: c2ea37a4c73364646b77e65d73be198f, type: 3}
       propertyPath: m_RootOrder
       value: 2

@@ -14,8 +14,6 @@ public class Player_Stats : MonoBehaviour
         {
            loadScene.Load(cg);
         }
-        
-
         cameraControl.PlayerShakeAnimation();
 
     }

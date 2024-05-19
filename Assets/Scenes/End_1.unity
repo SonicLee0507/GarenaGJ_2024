@@ -131,6 +131,18 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1888693282425122604, guid: aea935ee9aff05c4b829dccdfb888dff, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 31de65d7d86b5f04f813487d1d7973d7, type: 3}
+    - target: {fileID: 1888693282425122610, guid: aea935ee9aff05c4b829dccdfb888dff, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 196
+      objectReference: {fileID: 0}
+    - target: {fileID: 1888693283233303661, guid: aea935ee9aff05c4b829dccdfb888dff, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2426061830542050807, guid: aea935ee9aff05c4b829dccdfb888dff, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -175,6 +187,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3492005498924784480, guid: aea935ee9aff05c4b829dccdfb888dff, type: 3}
+      propertyPath: changeImageNum
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3492005498924784480, guid: aea935ee9aff05c4b829dccdfb888dff, type: 3}
+      propertyPath: CgImages.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3492005498924784480, guid: aea935ee9aff05c4b829dccdfb888dff, type: 3}
+      propertyPath: CgImages.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 31de65d7d86b5f04f813487d1d7973d7, type: 3}
+    - target: {fileID: 3492005498924784480, guid: aea935ee9aff05c4b829dccdfb888dff, type: 3}
+      propertyPath: CgImages.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 3c50c3c400185df4cb1aa69fe1964b7c, type: 3}
     - target: {fileID: 3607886379043990008, guid: aea935ee9aff05c4b829dccdfb888dff, type: 3}
       propertyPath: m_Name
       value: End_1

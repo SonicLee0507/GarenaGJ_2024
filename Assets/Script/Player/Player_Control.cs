@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class Player_Control : MonoBehaviour
 {
+    [SerializeField] public Player_Interact player_Interact;
     [SerializeField] public Player_Movement player_move;
     [SerializeField] public int stage;
     //[SerializeField] public Animator anim;
@@ -14,6 +15,7 @@ public class Player_Control : MonoBehaviour
     public int player_maxhp;
 
     [SerializeField] private Image player_stage_image;
+    [SerializeField] private SpriteRenderer player_sprite;
     [SerializeField] private Sprite[] player_stage_spritelist;
 
     public GameObject Player;
@@ -32,17 +34,21 @@ public class Player_Control : MonoBehaviour
 
         PlayerSkillSet();
 
-
-        if (Input.GetKeyDown(KeyCode.Mouse1))
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             if (stage == 2)
             {
                 Debug.Log("stage == 2");
-
+                player_sprite.sprite = player_stage_spritelist[2];
+                player_move.atking = true;
+                player_anim.Play("atk");
             }
             if (stage == 3)
             {
                 Debug.Log("stage == 3");
+                player_sprite.sprite = player_stage_spritelist[4];
+                player_move.atking = true;
+                player_anim.Play("atk");
             }
         }
         else if (Input.GetKey(KeyCode.Mouse1) & stage == 1)
@@ -62,19 +68,40 @@ public class Player_Control : MonoBehaviour
         {
             stage = 1;
             player_stage_image.sprite = player_stage_spritelist[0];
-            player_anim.Play("stage_1");
+            player_sprite.sprite = player_stage_spritelist[0];
+            player_sprite.sortingOrder = 0;
         }
         else if (Input.GetKeyDown(KeyCode.W))
         {
+            player_Interact.canInteract = false;
             stage = 2;
+            if(player_move.atking == false)
+            {
+                player_sprite.sprite = player_stage_spritelist[1];
+            }
             player_stage_image.sprite = player_stage_spritelist[1];
-            player_anim.Play("stage_2");
+            player_sprite.sprite = player_stage_spritelist[1];
+            player_sprite.sortingOrder = 2;
         }
         else if (Input.GetKeyDown(KeyCode.E))
         {
             stage = 3;
-            player_stage_image.sprite = player_stage_spritelist[2];
-            player_anim.Play("stage_3");
+            player_Interact.canInteract = false;
+            if (player_move.atking == false)
+            {
+                player_sprite.sprite = player_stage_spritelist[3];
+            }
+            player_stage_image.sprite = player_stage_spritelist[3];
+            player_sprite.sprite = player_stage_spritelist[3];
+            player_sprite.sortingOrder = 2;
+        }
+        if (stage == 2 & player_move.atking == false)
+        {
+            player_sprite.sprite = player_stage_spritelist[1];
+        }
+        else if (stage == 3 & player_move.atking == false)
+        {
+            player_sprite.sprite = player_stage_spritelist[3];
         }
     }
 
