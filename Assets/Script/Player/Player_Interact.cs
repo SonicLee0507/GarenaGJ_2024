@@ -6,6 +6,7 @@ public class Player_Interact : MonoBehaviour
 {
     public Player_Control player_Control;
     public bool[] Colletion;
+    public GameObject[] canUseStuff;
 
     public int interact_ID;
     public bool canInteract = true;
@@ -30,6 +31,30 @@ public class Player_Interact : MonoBehaviour
                 if (other.GetComponent<OBJ_Interactable>().isTrick)
                 {
                  boss_Movement.Process_PonitToMove(other.GetComponent<OBJ_Interactable>().obj_point);
+                }
+                if (other.GetComponent<OBJ_Interactable>().obj_id == 3)
+                {
+                    canUseStuff[1].SetActive(true);
+                }
+                if (other.GetComponent<OBJ_Interactable>().obj_id == 4)
+                {
+                    canUseStuff[0].SetActive(true);
+                }
+                if (other.GetComponent<OBJ_Interactable>().obj_id == 7)
+                {
+                    canUseStuff[3].SetActive(true);
+                }
+                if (other.GetComponent<OBJ_Interactable>().obj_id == 8)
+                {
+                    canUseStuff[4].SetActive(true);
+                }
+                if (other.GetComponent<OBJ_Interactable>().obj_id == 9)
+                {
+                    canUseStuff[5].SetActive(true);
+                }
+                if (other.GetComponent<OBJ_Interactable>().obj_id == 10)
+                {
+                    canUseStuff[2].SetActive(true);
                 }
             }
         }

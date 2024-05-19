@@ -17,7 +17,7 @@ public class Atk : MonoBehaviour
             }
             if (player_Control.stage == 3)
             {
-                loadScene.Load("End_4");
+                loadScene.Load("End_1");
             }
 
         }

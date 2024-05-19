@@ -19,7 +19,7 @@ public class Player_Movement : MonoBehaviour
 
     public bool atking;
 
-
+    public GameObject TocchObj;
     // Start is called before the first frame update
     void Start()
     {
@@ -46,7 +46,12 @@ public class Player_Movement : MonoBehaviour
         // Storing Player's Input
         input = Input.GetAxis("Horizontal");
         //Moving Player
-        rb.velocity = new Vector3(input * speed, rb.velocity.y);
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            rb.velocity = new Vector3(input * speed*6, rb.velocity.y);
+        }
+        else {rb.velocity = new Vector3(input * speed, rb.velocity.y); }
+
         if (input > 0)
         {
             transform.eulerAngles = new Vector3(0, 0, 0);

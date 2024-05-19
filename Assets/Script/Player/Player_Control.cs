@@ -18,8 +18,10 @@ public class Player_Control : MonoBehaviour
     [SerializeField] private SpriteRenderer player_sprite;
     [SerializeField] private Sprite[] player_stage_spritelist;
 
-    public GameObject Player;
 
+
+    public GameObject Player;
+    public GameObject TocchObj;
 
     //public GameObject HitEffect;
     void Start()
@@ -38,6 +40,7 @@ public class Player_Control : MonoBehaviour
         {
             if (stage == 2)
             {
+                TocchObj.SetActive(true);
                 Debug.Log("stage == 2");
                 player_sprite.sprite = player_stage_spritelist[2];
                 player_move.atking = true;
@@ -45,6 +48,7 @@ public class Player_Control : MonoBehaviour
             }
             if (stage == 3)
             {
+                TocchObj.SetActive(true);
                 Debug.Log("stage == 3");
                 player_sprite.sprite = player_stage_spritelist[4];
                 player_move.atking = true;

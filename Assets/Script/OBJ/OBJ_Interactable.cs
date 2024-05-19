@@ -13,25 +13,55 @@ public class OBJ_Interactable : MonoBehaviour
     public SpriteRenderer Obj;
     public Sprite beforeInteract;
     public Sprite afterInteract;
-    private void OnTriggerEnter(Collider other)
+
+    public Transform afterInteractPos;
+    private void OnTriggerStay(Collider other)
     {
 
-        if (other.name == "Boss" & !isInteractable)
+        if (other.tag == "Boss" & !isInteractable)
         {
             Debug.Log("Boss Event" + obj_id);
-            other.GetComponent<Boss_Movement>().Process_PonitToMove(obj_id);
+
+            if (obj_id ==5 & other.GetComponent<Boss_Movement>().processing)
+            {
+                Debug.Log("Boss Event" + 5555555555);
+                Obj.sprite = afterInteract;
+            }
+            else if (obj_id == 4 & other.GetComponent<Boss_Movement>().processing)
+            {
+                Debug.Log("Boss Event" + 4444444444);
+                Obj.sprite = afterInteract;
+            }
         }
 
         if (other.tag == "Player" & isInteractable)
         {
             Debug.Log("Player Event" + obj_id);
             other.GetComponent<Player_Interact>().PlayerInteract(obj_id);
-            isInteractable = false;
+            if (Input.GetKeyDown(KeyCode.F) & other.GetComponent<Player_Interact>().canInteract)
+            {
             Obj.sprite = afterInteract;
+                transform.position = afterInteractPos.position;
+            }
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Boss" & !isInteractable)
+        {
+            Debug.Log("Boss Event" + obj_id);
+
+            if (obj_id == 5 )
+            {
+                Debug.Log("Boss Event" + 5555555555);
+                Obj.sprite = beforeInteract;
+            }
+            else if (obj_id == 4)
+            {
+                Debug.Log("Boss Event" + 4444444444);
+                Obj.sprite = beforeInteract;
+            }
         }
 
-        //if (other.name == "Girl" + obj_id & isInteractable)
-        //{
-        //}
     }
 }
